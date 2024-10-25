@@ -1,16 +1,15 @@
 #!/bin/bash
-#
 # @author: Xueyi Li
 #
-# Given the input data is in "./data.txt", one value per line.
+# Given the input data is in "./data.txt", one (key value) pair per line
 
 scale=${1:-1}
-MaxValue=$( sort -k2nr ./data.txt | head -n1 | cut -d" " -f2 )    # Find Max Value
-MinValue=$( sort -k2n  ./data.txt | head -n1 | cut -d" " -f2 )    # Find Min Value
+MaxValue=$( sort -k2nr ./data.txt | head -n1 | cut -d" " -f2 )  # Find Max Value
+MinValue=$( sort -k2n  ./data.txt | head -n1 | cut -d" " -f2 )  # Find Min Value
 if (( scale > MaxValue )); then (( scale=MaxValue )); fi        # scale <= MaxValue
 
-
 echo
+
 plot_bar() {
     (( Line = $MaxValue/$scale ))               # apply scalar
     while [ $Line -gt 0 ]; do                   
