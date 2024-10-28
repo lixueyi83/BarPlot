@@ -1,7 +1,7 @@
-Eli     2
-Job     0
-Joe     15
-Mat     4
-Act     305
-Job     8
-Bob     100
+Eli,2
+Job,0
+Joe,15
+Matt,4
+Act,305
+Alex,8
+David,100
