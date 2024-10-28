@@ -3,10 +3,10 @@
 #
 # Given the input data is in "./data.txt", one (key value) pair per line
 
-scale=${1:-1}
-MaxValue=$( sort -k2nr ./data.txt | head -n1 | awk -F',' '{ print $2 }' )  # Find Max Value
-MinValue=$( sort -k2n  ./data.txt | head -n1 | awk -F',' '{ print $2 }' )  # Find Min Value
-if (( scale > MaxValue )); then (( scale=MaxValue )); fi        # scale <= MaxValue
+scale=${1:-10}
+MaxValue=$( sort -k2nr ./data.txt | head -n1 | awk -F',' '{ print $2 }' )   # Find Max Value
+MinValue=$( sort -k2n  ./data.txt | head -n1 | awk -F',' '{ print $2 }' )   # Find Min Value
+if (( scale > MaxValue )); then (( scale=MaxValue )); fi                    # scale <= MaxValue
 
 echo
 
@@ -40,17 +40,11 @@ plot_bar() {
     done
 }
 
-
 plot_bar $*
 
-while IFS="," read -r Key Value; do printf "   %-8s" "$Value"; done < ./data.txt
-echo
-while IFS="," read -r Key Value; do printf "   \033[1;30m%-8s\033[0m" "------"; done < ./data.txt
-echo
-while IFS="," read -r Key Value; do printf "   %-8s" "$Key"; done < ./data.txt
-
-echo
-echo
+while IFS="," read -r Key Value; do printf "    %-7s" "$Key"; done < ./data.txt && echo
+while IFS="," read -r Key Value; do printf "     %-6s" "$Value"; done < ./data.txt && echo
+echo && echo
 
 <<HERE
 declare -A Keys

@@ -7,7 +7,25 @@ Plot bar chart with a single bash script, no any other dependencies. Handy, easy
     ./plot.sh 10    # 10 is the scalar, could be any number
 ```
 
-![BarPlot](./.images/BarPlot.PNG)
+- **Input:**
+
+    `./data.txt`:
+
+    ```csv
+    ┌─────────────────┐
+    │  Eli,2          │
+    │  Job,0          │
+    │  Joe,15         │
+    │  Matt,4         │
+    │  Act,305        │
+    │  Alex,8         │
+    │  David,100      │
+    └─────────────────┘
+    ```
+
+- **Output:**
+
+    ![BarPlot](./.images/BarPlot.PNG)
 
 ---
 
